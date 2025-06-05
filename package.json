@@ -1,0 +1,11 @@
+{
+  "name": "com.darkbluetech.terraingrass",
+  "version": "1.0.0",
+  "displayName": "Terrain Grass",
+  "description": "Improved Grass System for Unity Terrains.",
+  "unity": "2021.3",
+  "author": {
+    "name": "Artem Ratushnyak",
+    "email": "contact@darkblue.tech"
+  }
+}
