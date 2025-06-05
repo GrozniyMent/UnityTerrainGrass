@@ -10,7 +10,7 @@
    
 ![Step 2](https://darkblue.tech/terraingrass/step2.png)
 
-3. Make shure that **GPU Instancing** if **enabled**
+3. Make shure that **GPU Instancing** is **enabled**
    
 ![Step 3](https://darkblue.tech/terraingrass/step3.png)
 
