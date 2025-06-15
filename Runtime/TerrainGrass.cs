@@ -600,6 +600,7 @@ namespace TerrainGrass {
             GUI.Label(new Rect(20, 20, 380, 310), debugText, debugStyle);
         }
 
+        #if UNITY_EDITOR
         void OnDrawGizmosSelected()
         {
             if (mainCamera == null || cameraTransform == null) return;
@@ -612,7 +613,7 @@ namespace TerrainGrass {
             );
             
             HashSet<Vector2Int> adjacentCells = GetAdjacentCells(cameraCell);
-
+        
             if (showViewCone)
             {
                 Gizmos.color = viewConeColor;
@@ -665,14 +666,12 @@ namespace TerrainGrass {
                     
                     Gizmos.DrawWireCube(center, size);
                     
-                    #if UNITY_EDITOR
                     string status = data.isTransitioning ? $"T:{data.transitionProgress:F1}" : $"P{data.priority}";
                     UnityEditor.Handles.Label(
                         center + Vector3.up * 2f, 
                         $"{data.currentCount}/{data.baseSet.Length} ({status})",
                         new GUIStyle { normal = { textColor = Color.white }, fontSize = 10 }
                     );
-                    #endif
                 }
             }
             
@@ -704,6 +703,7 @@ namespace TerrainGrass {
                 }
             }
         }
+        #endif
 
         public void SetHighDensity(float density) => highDensity = Mathf.Clamp(density, 0.1f, 10);
         public void SetMediumDensity(float density) => mediumDensity = Mathf.Clamp(density, 0.1f, 10);
